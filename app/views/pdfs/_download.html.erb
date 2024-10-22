@@ -1,0 +1,4 @@
+<div id="pdf_upload">
+  <h2>Your watermarked PDF is ready</h2>
+  <%= link_to 'Download PDF', data: { turbo: false }, href: "data:application/pdf;base64,#{Base64.encode64(pdf)}", download: 'watermarked.pdf' %>
+</div>

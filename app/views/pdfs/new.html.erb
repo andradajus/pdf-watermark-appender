@@ -1,0 +1,12 @@
+<!-- app/views/pdfs/new.html.erb -->
+<h1>Upload PDF and Add Watermark</h1>
+<%= form_with url: pdfs_path, local: true, multipart: true, data: { turbo: false } do |form| %>
+  <%= form.file_field :pdf %>
+  <%= form.text_field :watermark, placeholder: "Enter watermark text" %>
+  <%= form.number_field :size, placeholder: "Enter watermark size", value: 50 %>
+  <%= form.check_box :landscape %>
+  <%= form.label :landscape, "Landscape orientation" %>
+  <%= form.submit "Upload and Add Watermark" %>
+<% end %>
+
+<div id="pdf_upload"></div>
