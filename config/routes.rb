@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get "pdfs/new"
-  get "pdfs/create"
-  resources :pdfs, only: [:new, :create]
+  resources :pdfs, only: [:new, :create] do
+    collection do
+      post :bulk_upload
+    end
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
